@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Assistant Dashboard | COPD Detection</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<style>
+:root{
+  --primary:#2563eb; --dark:#0f172a; --muted:#64748b; --bg:#f1f5f9;
+  --card:#fff; --border:#e5e7eb;
+}
+*{box-sizing:border-box;margin:0;padding:0;font-family:Arial,sans-serif;}
+body{background:var(--bg);color:var(--dark);}
+
+/* HEADER */
+header{background:#fff;border-bottom:1px solid var(--border);padding:14px 24px;display:flex;justify-content:space-between;align-items:center;}
+.brand{display:flex;align-items:center;gap:10px;}
+.brand h1{font-size:20px;}
+.brand h1 span{color:var(--primary);}
+.user{font-size:14px;color:var(--muted);}
+
+/* LAYOUT */
+.layout{display:flex;min-height:calc(100vh - 62px);}
+
+/* SIDEBAR */
+.sidebar{width:230px;background:var(--dark);color:#cbd5e1;}
+.sidebar .title{padding:18px 20px;border-bottom:1px solid #1e293b;font-weight:bold;}
+.nav a{display:flex;align-items:center;gap:10px;padding:14px 20px;color:#cbd5e1;text-decoration:none;font-size:14px;}
+.nav a:hover{background:#1e293b;color:#fff;}
+
+/* MAIN */
+.main{flex:1;padding:24px;}
+
+/* CARDS */
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px;margin-bottom:28px;}
+.card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:18px;box-shadow:0 8px 20px rgba(0,0,0,.04);}
+.card h2{margin:0;font-size:28px;color:var(--primary);}
+.card p{margin:6px 0 0 0;color:var(--muted);font-size:13px;}
+
+/* TABLE */
+.box{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:18px;margin-bottom:24px;box-shadow:0 8px 20px rgba(0,0,0,.04);}
+.box h3{margin:0 0 14px 0;}
+table{width:100%;border-collapse:collapse;font-size:14px;}
+th,td{padding:10px;border-bottom:1px solid var(--border);text-align:left;}
+th{background:#f8fafc;}
+button{background:var(--primary);color:#fff;border:none;padding:6px 12px;border-radius:6px;cursor:pointer;}
+button:hover{background:#1d4ed8;}
+.badge{font-size:12px;padding:4px 8px;border-radius:999px;}
+.pending{background:#fde68a;}
+.done{background:#bbf7d0;}
+
+/* RESPONSIVE */
+@media(max-width:900px){.sidebar{display:none}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="brand">
+    <span class="material-symbols-outlined" style="color:#2563eb">pulmonology</span>
+    <h1>COPD <span>Detection</span></h1>
+  </div>
+  <div class="user">Welcome, Assistant</div>
+</header>
+
+<div class="layout">
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <div class="title">Assistant Panel</div>
+    <nav class="nav">
+      <a href="#"><span class="material-symbols-outlined">dashboard</span>Dashboard</a>
+      <a href="#"><span class="material-symbols-outlined">event</span>Register Patient</a>
+      <a href="#"><span class="material-symbols-outlined">group</span>Patients</a>
+      <a href="#"><span class="material-symbols-outlined">event</span>Appointments</a>
+      <a href="#"><span class="material-symbols-outlined">logout</span>Logout</a>
+    </nav>
+  </aside>
+
+  <!-- MAIN -->
+  <main class="main">
+    <!-- Summary Cards -->
+    <section class="cards">
+      <div class="card"><h2>124</h2><p>Total Patients</p></div>
+      <div class="card"><h2>9</h2><p>Today’s Appointments</p></div>
+      <div class="card"><h2>3</h2><p>Pending</p></div>
+    </section>
+
+    <!-- Appointments Table -->
+    <section class="box">
+      <h3>Appointments</h3>
+      <table>
+        <tr>
+          <th>Patient</th><th>Doctor</th><th>Date</th><th>Status</th><th>Action</th>
+        </tr>
+        <tr>
+          <td>Kamal Perera</td><td>Dr. Silva</td><td>2026-02-01</td>
+          <td><span class="badge pending">Pending</span></td>
+          <td><a href="get-cough-member1.html"><button>Do Test</button></a></td>
+        </tr>
+        <tr>
+          <td>Saman Fernando</td><td>Dr. Jayasuriya</td><td>2026-02-01</td>
+          <td><span class="badge done">Completed</span></td>
+          <td>N/A</td>
+        </tr>
+        <tr>
+          <td>Nimal Perera</td><td>Dr. Silva</td><td>2026-02-02</td>
+          <td><span class="badge pending">Pending</span></td>
+          <td><a href="get-cough-member2.html"><button>Do Test</button></a></td>
+        </tr>
+      </table>
+    </section>
+
+  </main>
+</div>
+</body>
+</html>
